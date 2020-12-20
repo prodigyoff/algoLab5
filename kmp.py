@@ -1,4 +1,4 @@
-def find_prefixes(pattern: str, pattern_length: int, prefix_list: list) -> list:
+def find_prefixes(pattern: str, pattern_length: int, prefix_list: list):
     length = 0
     pattern_counter = 1
     while pattern_counter < pattern_length:
@@ -20,7 +20,7 @@ def kmp(pattern: str, text: str):
         return -1
     pattern_length = len(pattern)
     prefix_list = [0] * pattern_length
-    find_prefixes(pattern, pattern_length, prefix_list)
+    prefix_list = find_prefixes(pattern, pattern_length, prefix_list)
     text_counter = 0
     pattern_counter = 0
     result = []
