@@ -1,14 +1,14 @@
 def find_prefixes(pattern: str, pattern_length: int, prefix_list: list):
-    length = 0
+    match_counter = 0
     pattern_counter = 1
     while pattern_counter < pattern_length:
-        if pattern[pattern_counter] == pattern[length]:
-            prefix_list[pattern_counter] = length + 1
-            length += 1
+        if pattern[pattern_counter] == pattern[match_counter]:
+            prefix_list[pattern_counter] = match_counter + 1
+            match_counter += 1
             pattern_counter += 1
         else:
-            if length != 0:
-                length = prefix_list[length - 1]
+            if match_counter != 0:
+                match_counter = prefix_list[match_counter - 1]
             else:
                 prefix_list[pattern_counter] = 0
                 pattern_counter += 1
